@@ -2,7 +2,11 @@
 @use '../../styles//partials//global' as *;
 
 .header {
-	padding: 1.5rem 0;
+	padding: 1.5rem 0 ;
+	
+	@include tablet {
+		padding: 1.5rem 0 0.5rem 0;
+	}
 
 	&__container {
 		@include tablet {

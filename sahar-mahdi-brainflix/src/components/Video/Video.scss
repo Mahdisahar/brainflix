@@ -1,0 +1,38 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles//partials//global' as *;
+
+.video {
+	@include tablet {
+		min-height: 24.5rem;
+	}
+	&__posters {
+		@include tablet {
+			background-color: black;
+			// min-height: 24.5rem;
+		}
+	}
+
+	&__poster {
+		width: 100%;
+	
+
+		@include tablet {
+			width: 90%;
+			margin: 0 2.5rem;
+		}
+		@include desktop {
+			width: 80%;
+			margin: 0 8rem;
+		
+		}
+	}
+	&__container {
+		margin: 1.5rem 1rem ;
+	
+	}
+	&__title {
+		padding-bottom: 1rem ;
+		border-bottom:  1px solid $silver--color;
+		color: $grayblack--color;
+	}
+}
