@@ -1,12 +1,11 @@
 import './App.scss';
 // Import the Header section from Header component
 import Header from './components/Header/Header';
-// import the vedio here 
+// import the vedio and other data
 import Video from './components/Video/Video';
-// import videoData from '../src/data/videos.json';
 import videoData from '../src/data/video-details.json';
-import { useState } from 'react';
 
+import { useState } from 'react';
 
 function App() {
 

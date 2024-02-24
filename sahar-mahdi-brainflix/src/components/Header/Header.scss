@@ -2,98 +2,95 @@
 @use '../../styles//partials//global' as *;
 
 .header {
-	padding: 1.5rem 0 ;
-	
-	@include tablet {
-		padding: 1.5rem 0 0.5rem 0;
-	}
+  padding: 1.5rem 0;
 
-	&__container {
-		@include tablet {
-				justify-content: space-around;
-				align-items: center;
-				@include flex;
-		  }	
-	}
+  @include tablet {
+    padding: 1.5rem 0 0.5rem 0;
+  }
 
-	&__logo {
-		text-align: center;
-		margin-bottom: 1rem;
-	}
+  &__container {
+    @include tablet {
+      justify-content: space-around;
+      align-items: center;
+      @include flex;
+    }
+  }
 
-	&__subcontainer {
-		position: relative;
+  &__logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 
-		@include tablet {
-			@include flex;
-	  }
-	
-	}
-	
-	&__search {
-		margin: 0 1rem;
+  &__subcontainer {
+    position: relative;
 
-		@include tablet {
-			margin: 0;
-		}
-	}
+    @include tablet {
+      @include flex;
+    }
+  }
 
-	&__icon {
-		position: absolute;
-		padding: 0.8rem	
-	}
+  &__search {
+    margin: 0 1rem;
 
-	&__input {
-		height: 3rem;
-		width: 80%;
-		padding-left: 2.5rem;
-		color: $grayblack--color;
-		background-color: $mercury--color;
-		border: 1px solid $silver--color;
-		border-radius: 5px;
-		margin-bottom: 1rem;
+    @include tablet {
+      margin: 0;
+    }
+  }
 
-		@include tablet {
-			width: 16rem;
-	  }
-		
-	}
+  &__icon {
+    position: absolute;
+    padding: 0.8rem;
+  }
 
-	&__avatar {
-		width: 3rem;
-		height: 3rem;
-		border-radius: 50%;
-		position: absolute;
-		bottom: 4.2rem;
-		right: 1rem;
+  &__input {
+    height: 3rem;
+    width: 80%;
+    padding-left: 2.5rem;
+    color: $grayblack--color;
+    background-color: $mercury--color;
+    border: 1px solid $silver--color;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 
-		@include tablet {
-			bottom: 1rem;
-		right: -3.5rem;
-	  }
-	}
+    @include tablet {
+      width: 16rem;
+    }
+  }
 
-	&__btn {
-		background-color: $primary--color;
-	padding: 1rem;
-	margin-left: 0.5rem;
-	width: 19rem;
-		border: none;
-		border-radius: 8px;
-		color: $secondary--color;
-		font-size: 1rem;
+  &__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4.2rem;
+    right: 1rem;
 
-		@include tablet {
-			width: 9rem;
-	  }
-		
-	}
-	&__test {
-		display: flex;
-	}
+    @include tablet {
+      bottom: 1rem;
+      right: -3.5rem;
+    }
+  }
 
-	&__uploadicon {
-	 position: absolute;
-	margin: 0.8rem 1rem;
-	}
+  &__btn {
+    background-color: $primary--color;
+    padding: 1rem;
+	margin-left: 1rem;
+	width: 90%;
+    border: none;
+    border-radius: 8px;
+    color: $secondary--color;
+    font-size: 1rem;
+
+    @include tablet {
+      width: 9rem;
+    }
+  }
+  &__test {
+    display: flex;
+  }
+
+  &__uploadicon {
+    position: absolute;
+    margin: 0.8rem 1.5rem;
+  }
 }
