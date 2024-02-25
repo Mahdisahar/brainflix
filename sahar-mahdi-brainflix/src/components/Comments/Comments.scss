@@ -1,0 +1,162 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles//partials//global' as *;
+
+.comments {
+  margin: 0.5rem 1rem;
+
+  @include desktop {
+    width: 72.5%;
+    border-right: 1px solid $silver--color;
+  }
+
+  &__title,
+  &__title2 {
+    color: $grayblack--color;
+    margin-bottom: 1rem;
+  }
+  @include tablet {
+    &__title {
+      margin-left: 2rem;
+    }
+  }
+
+  &__title2 {
+    margin-left: 4rem;
+    margin-top: 1.5rem;
+    color: $silver--color;
+
+    @include tablet {
+      margin-left: 6.5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+  &__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  &__btn {
+    background-color: $primary--color;
+    padding: 1rem;
+    margin: 1rem 0 0 4rem;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    color: $secondary--color;
+    font-size: 1rem;
+
+    @include tablet {
+      margin: 0;
+      width: 13rem;
+    }
+  }
+  &__btncontainer {
+    position: relative;
+
+    @include tablet {
+      margin: 0 1rem;
+    }
+  }
+
+  &__flexcontainer {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      margin-left: 2.5rem;
+    }
+  }
+  &__icon {
+    position: absolute;
+    left: 5rem;
+    top: 2rem;
+
+    @include tablet {
+      left: 1rem;
+      top: 1rem;
+    }
+  }
+
+  &__text {
+    background-color: $mercury--color;
+    border: 1px solid $silver--color;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 80%;
+    resize: none;
+
+    @include tablet {
+      width: 25rem;
+      height: 3rem;
+    }
+
+    @include desktop {
+      width: 35rem;
+      height: 3rem;
+    }
+
+    &::placeholder {
+      color: $grayblack--color;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+
+  &__list {
+    list-style: none;
+	margin-top: 1rem;
+	border-top: 1px solid $silver--color;
+  }
+
+  &__itemcontainer {
+	display: flex;
+	margin-top: 1rem;
+	align-items: center;
+  }
+  &__showstime {
+	display: flex;
+  }
+
+  &__item {
+	border-bottom: 1px solid $silver--color;
+	padding-bottom: 1rem;
+
+	&--shape {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		margin-right: 1rem;
+		background-color: $mercury--color;
+
+	}
+	&--title {
+		font-size: 1rem;
+		color: $grayblack--color;
+	}
+	&--time {
+		margin-left: 2rem;
+		color: $silver--color;
+
+		@include tablet {
+			margin-left: 25rem;
+		   }
+		   
+		@include desktop {
+			margin-left: 36rem;
+		   }
+	}
+
+	@include tablet {
+	 padding: 1rem 0 1rem 2.5rem;
+	}
+  }
+
+&__para {
+margin-left: 4rem;
+color: $grayblack--color;
+}
+}

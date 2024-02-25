@@ -38,7 +38,10 @@ function Video(props) {
               <p>{props.selectVideo.likes}</p>
             </div>
           </div>
-        </div>
+	    </div>
+		<div className='video__comment'>
+			<p>{props.selectVideo.description}</p>
+		  </div>
       </div>
     </section>
   );
