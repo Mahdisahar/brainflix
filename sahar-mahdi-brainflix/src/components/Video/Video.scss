@@ -18,17 +18,19 @@
 
     @include tablet {
       width: 90%;
-      margin: 0 2.5rem;
+	  padding-left: 6rem;
+    //   margin: 0 2.5rem;
     }
 
     @include desktop {
       width: 80%;
-      margin: 0 10rem;
+	padding: 0 4rem;
+	margin-left: 8rem;
     }
   }
 
   &__container {
-    margin: 1.5rem $primary-space;
+    margin: 1.5rem 1rem;
 
     @include tablet {
       margin-left: 3rem;
@@ -36,13 +38,13 @@
 
 	@include desktop {
 		width: 60%;
-		margin-left: 6rem;
+		// margin-left: 6rem;
 	  }
 
   }
 
   &__title {
-    padding-bottom: $primary-space;
+    padding-bottom:1rem;
     border-bottom: 1px solid $silver--color;
     color: $grayblack--color;
 
@@ -53,7 +55,7 @@
 
   &__info {
     border-bottom: 1px solid $silver--color;
-    padding-bottom: $primary-space;
+    padding-bottom: 1rem;
 	@include flex;
 
     @include tablet {
@@ -70,7 +72,7 @@
   &__para {
     color: $grayblack--color;
     font-weight: bold;
-    padding: $primary-space 0 1.5rem 0;
+    padding: 1rem 0 1.5rem 0;
 
     @include tablet {
       padding: 0;
@@ -85,15 +87,15 @@
   }
 
   &__icon {
-    margin: $primary-space 0 0 1.5rem;
+    margin: 1rem 0 0 1.5rem;
     @include tablet {
 		@include flex;
       margin: 0;
     }
 
-	@include desktop {
-		margin-right: $primary-space;
-	  }
+	// @include desktop {
+	// 	margin-right: 1rem;
+	//   }
   }
   
   &__viewicon,
@@ -106,7 +108,7 @@
     margin-bottom: 1.5rem;
 
     @include tablet {
-      margin: 0 2rem 0 $primary-space;
+      margin: 0 2rem 0 1rem;
     }
   }
   &__imge {

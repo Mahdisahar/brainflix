@@ -1,20 +1,19 @@
 @use '../../styles/partials/variables' as *;
-@use '../../styles//partials//global' as *;
+@use '../../styles/partials/global' as *;
 
 .youtube {
-  margin: 1rem;
   width: 100%;
   padding: 0 0.5rem;
 
   @include tablet {
-	margin-left: 3rem;
+	padding-left: 3rem;
   }
 
   @include desktop {
     position: absolute;
     width: 29%;
 	left:56rem;
-    top: 45rem;
+    top: 40rem;
     padding: 0 1rem;
 	margin: 0;
     border-left: 1px solid $silver--color;

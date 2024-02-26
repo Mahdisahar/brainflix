@@ -1,5 +1,5 @@
 @use '../../styles/partials/variables' as *;
-@use '../../styles//partials//global' as *;
+@use '../../styles/partials/global' as *;
 
 .header {
   padding: 1.5rem 0;
@@ -18,7 +18,7 @@
 
   &__logo {
     text-align: center;
-    margin-bottom: $primary-space;
+    margin-bottom: 1rem;
   }
 
   &__subcontainer {
@@ -50,7 +50,7 @@
     background-color: $mercury--color;
     border: 1px solid $silver--color;
     border-radius: 5px;
-    margin-bottom: $primary-space;
+    margin-bottom: 1rem;
 
     @include tablet {
       width: 16rem;
@@ -63,17 +63,17 @@
     border-radius: 50%;
     position: absolute;
     bottom: 4.2rem;
-    right: $primary-space;
+    right: 1rem;
 
     @include tablet {
-      bottom: $primary-space;
-      right: -3.5rem;
+      bottom: 1rem;
+      right: -3.2rem;
     }
   }
 
   &__btn {
     background-color: $primary--color;
-    padding: $primary-space;
+    padding: 1rem;
 	margin-left: 1rem;
 	width: 90%;
     border: none;
