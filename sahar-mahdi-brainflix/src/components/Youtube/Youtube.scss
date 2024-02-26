@@ -1,0 +1,66 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles//partials//global' as *;
+
+.youtube {
+	margin: 1rem;
+	width: 100%;
+	padding: 0 0.5rem;
+
+	 @include desktop {
+		position: absolute;
+		width: 30%;
+		right: -2rem;
+		top: 45rem;
+		padding: 0 1rem;
+		border-left: 1px solid $silver--color;
+	 }
+
+	@include tablet {
+		// margin-left: 4rem;
+	}
+
+	&__title {
+		color:$silver--color ;
+	}
+
+	&__container {
+		display: flex;
+		margin-top: 1.5rem;		
+	}
+	
+	&__firstcontainer {
+		display: flex;
+	}
+
+	&__image {
+		width: 8rem;
+		height: 5rem;
+		border-radius: 7px;
+
+		@include desktop {
+width: 7rem;
+		height: 4rem;
+		}
+	}
+
+	&__subcontainer {
+		margin-left: 1rem;
+		font-size: 0.9rem;
+	}
+
+	&__subtitle {
+		color: $grayblack--color;
+		margin-bottom: 1rem;
+
+		@include tablet {
+			margin-bottom: 2.5rem;
+		}
+
+		@include desktop {
+			margin-bottom: 0;
+		}
+	}
+	&__para {
+		color: $grayblack--color;
+	}
+}

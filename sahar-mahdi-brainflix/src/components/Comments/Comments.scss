@@ -5,8 +5,9 @@
   margin: 0.5rem 1rem;
 
   @include desktop {
-    width: 72.5%;
-    border-right: 1px solid $silver--color;
+    width: 65%;
+	margin-left: 3rem;
+    // border-right: 1px solid $silver--color;
   }
 
   &__title,
@@ -14,9 +15,10 @@
     color: $grayblack--color;
     margin-bottom: 1rem;
   }
+
   @include tablet {
     &__title {
-      margin-left: 2rem;
+      margin-left: 1rem;
     }
   }
 
@@ -64,11 +66,17 @@
   }
 
   &__flexcontainer {
+
     @include tablet {
       display: flex;
       align-items: center;
       margin-left: 2.5rem;
     }
+
+	@include desktop {
+		margin-left: 0.4rem;
+	  }
+
   }
   &__icon {
     position: absolute;
@@ -92,10 +100,11 @@
     @include tablet {
       width: 25rem;
       height: 3rem;
+	  padding: 0;
     }
 
     @include desktop {
-      width: 35rem;
+      width: 33rem;
       height: 3rem;
     }
 
@@ -103,6 +112,7 @@
       color: $grayblack--color;
       font-size: 0.9rem;
       font-weight: bold;
+	  padding: 0.8rem ;
     }
   }
 
@@ -110,7 +120,7 @@
     list-style: none;
 	margin-top: 1rem;
 	border-top: 1px solid $silver--color;
-  }
+}
 
   &__itemcontainer {
 	display: flex;
@@ -153,6 +163,9 @@
 	@include tablet {
 	 padding: 1rem 0 1rem 2.5rem;
 	}
+	@include desktop {
+		padding: 1rem 0;
+	   }
   }
 
 &__para {

@@ -7,6 +7,7 @@
   }
 
   &__posters {
+
     @include tablet {
       background-color: black;
     }
@@ -19,6 +20,7 @@
       width: 90%;
       margin: 0 2.5rem;
     }
+
     @include desktop {
       width: 80%;
       margin: 0 8rem;
@@ -33,8 +35,9 @@
     }
 
 	@include desktop {
-		width: 70%;
-		border-right: 1px solid $silver--color;
+		width: 65%;
+		margin-left: 4rem;
+		// border-right: 1px solid $silver--color;
 	  }
 
   }
