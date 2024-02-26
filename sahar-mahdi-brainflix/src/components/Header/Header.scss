@@ -18,7 +18,7 @@
 
   &__logo {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: $primary-space;
   }
 
   &__subcontainer {
@@ -50,7 +50,7 @@
     background-color: $mercury--color;
     border: 1px solid $silver--color;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: $primary-space;
 
     @include tablet {
       width: 16rem;
@@ -63,17 +63,17 @@
     border-radius: 50%;
     position: absolute;
     bottom: 4.2rem;
-    right: 1rem;
+    right: $primary-space;
 
     @include tablet {
-      bottom: 1rem;
+      bottom: $primary-space;
       right: -3.5rem;
     }
   }
 
   &__btn {
     background-color: $primary--color;
-    padding: 1rem;
+    padding: $primary-space;
 	margin-left: 1rem;
 	width: 90%;
     border: none;
@@ -81,12 +81,17 @@
     color: $secondary--color;
     font-size: 1rem;
 
+	&:hover {
+   background-color: $primary--hover;
+   cursor: pointer;
+	}
+
     @include tablet {
       width: 9rem;
     }
   }
   &__test {
-    display: flex;
+   @include flex
   }
 
   &__uploadicon {

@@ -2,65 +2,67 @@
 @use '../../styles//partials//global' as *;
 
 .youtube {
-	margin: 1rem;
-	width: 100%;
-	padding: 0 0.5rem;
+  margin: 1rem;
+  width: 100%;
+  padding: 0 0.5rem;
 
-	 @include desktop {
-		position: absolute;
-		width: 30%;
-		right: -2rem;
-		top: 45rem;
-		padding: 0 1rem;
-		border-left: 1px solid $silver--color;
-	 }
+  @include tablet {
+	margin-left: 3rem;
+  }
 
-	@include tablet {
-		// margin-left: 4rem;
-	}
+  @include desktop {
+    position: absolute;
+    width: 29%;
+	left:56rem;
+    top: 45rem;
+    padding: 0 1rem;
+	margin: 0;
+    border-left: 1px solid $silver--color;
+  }
 
-	&__title {
-		color:$silver--color ;
-	}
+  &__title {
+    color: $silver--color;
+  }
 
-	&__container {
-		display: flex;
-		margin-top: 1.5rem;		
-	}
-	
-	&__firstcontainer {
-		display: flex;
-	}
+  &__container {
+    @include flex;
+    margin-top: 1.5rem;
+  }
 
-	&__image {
-		width: 8rem;
-		height: 5rem;
-		border-radius: 7px;
+  &__firstcontainer {
+	@include flex;
+  }
 
-		@include desktop {
-width: 7rem;
-		height: 4rem;
-		}
-	}
+  &__image {
+    width: 8rem;
+    height: 5rem;
+    border-radius: 7px;
 
-	&__subcontainer {
-		margin-left: 1rem;
-		font-size: 0.9rem;
-	}
+    @include desktop {
+      width: 7rem;
+      height: 4rem;
+    }
+  }
 
-	&__subtitle {
-		color: $grayblack--color;
-		margin-bottom: 1rem;
+  &__subcontainer {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
 
-		@include tablet {
-			margin-bottom: 2.5rem;
-		}
+  &__subtitle {
+    color: $grayblack--color;
+    margin-bottom: 1rem;
 
-		@include desktop {
-			margin-bottom: 0;
-		}
-	}
-	&__para {
-		color: $grayblack--color;
-	}
+    @include tablet {
+      margin-bottom: 2.5rem;
+    }
+
+    @include desktop {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__para {
+    color: $grayblack--color;
+  }
 }

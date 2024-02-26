@@ -23,27 +23,26 @@
 
     @include desktop {
       width: 80%;
-      margin: 0 8rem;
+      margin: 0 10rem;
     }
   }
 
   &__container {
-    margin: 1.5rem 1rem;
+    margin: 1.5rem $primary-space;
 
     @include tablet {
       margin-left: 3rem;
     }
 
 	@include desktop {
-		width: 65%;
-		margin-left: 4rem;
-		// border-right: 1px solid $silver--color;
+		width: 60%;
+		margin-left: 6rem;
 	  }
 
   }
 
   &__title {
-    padding-bottom: 1rem;
+    padding-bottom: $primary-space;
     border-bottom: 1px solid $silver--color;
     color: $grayblack--color;
 
@@ -54,8 +53,8 @@
 
   &__info {
     border-bottom: 1px solid $silver--color;
-    padding-bottom: 1rem;
-    display: flex;
+    padding-bottom: $primary-space;
+	@include flex;
 
     @include tablet {
       justify-content: space-between;
@@ -64,14 +63,14 @@
 
   &__channel {
     @include tablet {
-      display: flex;
+		@include flex;
     }
   }
 
   &__para {
     color: $grayblack--color;
     font-weight: bold;
-    padding: 1rem 0 1.5rem 0;
+    padding: $primary-space 0 1.5rem 0;
 
     @include tablet {
       padding: 0;
@@ -86,20 +85,20 @@
   }
 
   &__icon {
-    margin: 1rem 0 0 1.5rem;
+    margin: $primary-space 0 0 1.5rem;
     @include tablet {
-      display: flex;
+		@include flex;
       margin: 0;
     }
 
 	@include desktop {
-		margin-right: 1rem;
+		margin-right: $primary-space;
 	  }
   }
   
   &__viewicon,
   &__likeicon {
-    display: flex;
+	@include flex;
     color: $silver--color;
   }
 
@@ -107,7 +106,7 @@
     margin-bottom: 1.5rem;
 
     @include tablet {
-      margin: 0 2rem 0 1rem;
+      margin: 0 2rem 0 $primary-space;
     }
   }
   &__imge {
@@ -118,5 +117,11 @@
 	margin: 1.5rem 0;
 	color: $grayblack--color ;
 	line-height: 1.5rem;
+  }
+
+  &__span {
+	@include tablet {
+		display: none;
+	}
   }
 }

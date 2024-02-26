@@ -19,7 +19,7 @@ function Video(props) {
       </div>
 
       <div className='video__container'>
-        <h1 className='video__title'>Tech Trends: {props.selectVideo.title}</h1>
+        <h1 className='video__title'><span className='video__span'>Tech Trends:</span> {props.selectVideo.title}</h1>
 
         <div className='video__info'>
           <div className='video__channel'>
