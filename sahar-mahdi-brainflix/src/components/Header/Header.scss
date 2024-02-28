@@ -81,10 +81,10 @@
     color: $secondary--color;
     font-size: 1rem;
 
-	&:hover {
-   background-color: $primary--hover;
-   cursor: pointer;
-	}
+// 	&:hover {
+//    background-color: $primary--hover;
+//    cursor: pointer;
+// 	}
 
     @include tablet {
       width: 9rem;
