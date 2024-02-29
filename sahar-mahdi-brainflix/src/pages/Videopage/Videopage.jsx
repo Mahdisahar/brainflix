@@ -1,8 +1,20 @@
 import './Videopage.scss';
+import { NavLink } from 'react-router-dom';
 import uploadVideoPreview from '../../assets/Images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/Icons/publish.svg';
 
+
 function Videopage() {
+
+	const handlePublishClick = () => {
+		alert('You Published successfully');
+		<link to='/'/>
+	}
+
+	const handleCancelClick = () => {
+		<link to='/'/>
+	}
+
   return (
     <section className='upload'>
       <h2 className='upload__title'>Upload Video</h2>
@@ -46,9 +58,13 @@ function Videopage() {
               src={publishIcon}
               alt='publish icon'
             />
-            <button className='upload__publish'>PUBLISH</button>
-          </div>
-          <button className='upload__cancel'>CANCEL</button>
+			< NavLink to="/">
+            <button className='upload__publish' onClick={handlePublishClick}>PUBLISH</button>
+			</ NavLink>
+		  </div>
+		  <NavLink to='/'>
+          <button className='upload__cancel' onClick={handleCancelClick}>CANCEL</button>
+		  </NavLink>
         </div>
     </section>
   );

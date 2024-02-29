@@ -6,7 +6,7 @@ function Youtube(props) {
       <h4 className='youtube__title'>NEXT VIDEOS</h4>
 
       {props.selectYoutube.map((youtubeWatch) => (
-        <div className='youtube__container' key={youtubeWatch.id}>
+        <div className='youtube__container' key={youtubeWatch.id} onClick={() => props.onVideoSelect(youtubeWatch)}>
           <img className='youtube__image' src={youtubeWatch.image} alt='imge' />
 
           <div className='youtube__subcontainer'>
