@@ -10,7 +10,9 @@ function App () {
 		<Header />
 		<Routes>
 			<Route path='/' element={<Homepage />} />
+			<Route path='/videos/:id' element= {<Homepage />} />
 			<Route path='/video' element={< Videopage/>} />
+			<Route path='*' element={<Homepage />}/>
 		</Routes>
 		</BrowserRouter>
 	);
