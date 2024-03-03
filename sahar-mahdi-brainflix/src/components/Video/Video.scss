@@ -7,7 +7,6 @@
   }
 
   &__posters {
-
     @include tablet {
       background-color: black;
     }
@@ -18,14 +17,13 @@
 
     @include tablet {
       width: 90%;
-	  padding-left: 6rem;
-    //   margin: 0 2.5rem;
+      padding-left: 6rem;
     }
 
     @include desktop {
       width: 80%;
-	padding: 0 4rem;
-	margin-left: 8rem;
+      padding: 0 4rem;
+      margin-left: 8rem;
     }
   }
 
@@ -36,36 +34,35 @@
       margin-left: 3rem;
     }
 
-	@include desktop {
-		width: 60%;
-		// margin-left: 6rem;
-	  }
-
+    @include desktop {
+      width: 65%;
+      padding-left: 6rem;
+    }
   }
 
   &__title {
-    padding-bottom:1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid $silver--color;
     color: $grayblack--color;
 
     @include tablet {
       border-bottom: none;
     }
+
+    @include desktop {
+      font-size: 2rem;
+    }
   }
 
   &__info {
     border-bottom: 1px solid $silver--color;
     padding-bottom: 1rem;
-	@include flex;
-
-    @include tablet {
-      justify-content: space-between;
-    }
+    @include flex;
   }
 
   &__channel {
     @include tablet {
-		@include flex;
+      @include flex;
     }
   }
 
@@ -88,19 +85,17 @@
 
   &__icon {
     margin: 1rem 0 0 1.5rem;
-    @include tablet {
-		@include flex;
-      margin: 0;
-    }
 
-	// @include desktop {
-	// 	margin-right: 1rem;
-	//   }
+    @include tablet {
+      @include flex;
+      margin-top: 0;
+      margin-left: 13rem;
+	}
   }
-  
+
   &__viewicon,
   &__likeicon {
-	@include flex;
+    @include flex;
     color: $silver--color;
   }
 
@@ -116,14 +111,14 @@
   }
 
   &__comment {
-	margin: 1.5rem 0;
-	color: $grayblack--color ;
-	line-height: 1.5rem;
+    margin: 1.5rem 0;
+    color: $grayblack--color;
+    line-height: 1.5rem;
   }
 
   &__span {
-	@include tablet {
-		display: none;
-	}
+    @include tablet {
+      display: none;
+    }
   }
 }

@@ -74,24 +74,19 @@
   &__btn {
     background-color: $primary--color;
     padding: 1rem;
-	margin-left: 1rem;
-	width: 90%;
+    margin-left: 1rem;
+    width: 90%;
     border: none;
     border-radius: 8px;
     color: $secondary--color;
     font-size: 1rem;
-
-// 	&:hover {
-//    background-color: $primary--hover;
-//    cursor: pointer;
-// 	}
 
     @include tablet {
       width: 9rem;
     }
   }
   &__test {
-   @include flex
+    @include flex;
   }
 
   &__uploadicon {

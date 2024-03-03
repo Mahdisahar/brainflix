@@ -3,69 +3,67 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Video from '../../components/Video/Video';
-import videoData from '../../data/video-details.json';
 import Comments from '../../components/Comments/Comments';
-import Youtube from '../../components/Youtube/Youtube';
+import VideoList from '../../components/VideoList/VideoList';
 
 const Base_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
 const api_key = '4d84c38d-eed7-4f2e-84cb-cda8f2dbfd81';
 
-function Homepage () {
-	const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
-	const [selectComments, setSelectComment] = useState(videoData[0].comments.slice(0,3));
-	console.log('just console setSelectComment', setSelectComment);
-	// const [selectYoutubeVideo, setSelectYoutubeVideo] = useState(videoData.slice(1));
-const [selectYoutubeVideo, setSelectYoutubeVideo] = useState([]);
-const [videoId, setVideoId] = useState({});
+function Homepage() {
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const [selectVideoList, setSelectVideoList] = useState([]);
+  const [selectComments, setSelectComment] = useState([]);
+  const params = useParams();
 
-useEffect(() => {
-	const getVedios= async () => {
-		try {
-				const response = await axios.get(`${Base_URL}/videos?api_key=${api_key}`) ;
-				const videosData = response.data;
-				console.log('videos data', videosData);
-				setSelectYoutubeVideo(videosData.slice(1));
+  const defaultVideoId = '84e96018-4022-434e-80bf-000ce4cd12b8';
 
-		} catch (error) {
-			console.log('Error fetching videos', error);
+  useEffect(() => {
+    const getVedios = async () => {
+      try {
+        const response = await axios.get(
+          `${Base_URL}/videos?api_key=${api_key}`
+        );
+        const videosData = response.data;
+        setSelectVideoList(videosData);
+      } catch (error) {
+        console.log('Error fetching videos', error);
+      }
+    };
+    getVedios();
+  }, []);
 
-		}
-	};
-	getVedios();
-}, []);
+  useEffect(() => {
+    const getVideosById = async (id) => {
+      console.log(id);
+      try {
+        const secResponse = await axios.get(
+          `${Base_URL}/videos/${id}?api_key=${api_key}`
+        );
+        const videoData = secResponse.data;
+        console.log(videoData);
+        setSelectedVideo(videoData);
+        setSelectComment(videoData.comments);
+      } catch (error) {
+        console.log('Error Fetching video', error);
+      }
+    };
+    if (params.id) {
+      getVideosById(params.id);
+    } else {
+      getVideosById(defaultVideoId);
+    }
+  }, [params]);
 
-
-const params = useParams();
-console.log(params);
-
-useEffect(() => {
-
-	const getVideosById = async (id) => {
-		const response = await axios.get(`${Base_URL}/videos/${id}?api_key=${api_key}`);
-		setVideoId(response.data);
-	};
-	if (params.videoId) {
-		console.log(params.videoId);
-		getVideosById(params.videoId);
-	} else {
-		getVideosById('');
-	}
-}, [params]);
-
-
-const handleVideoSelect = (video) => {
-	setSelectedVideo(video);
-	// setSelectComment(video);
-	// setSelectYoutubeVideo(selectYoutubeVideo.filter(item => item.id !== video.id));
-	setSelectYoutubeVideo(selectYoutubeVideo.filter(video => video.id !== videoId.id));
-}
-	return (
-    <div className="App">
-	<Video selectVideo={selectedVideo} />
-    <Comments selectComment={selectComments} />
-	<Youtube selectYoutube={selectYoutubeVideo} onVideoSelect={handleVideoSelect} />
-	</div>
+  return (
+    <div className='App'>
+      <Video selectVideo={selectedVideo} />
+      <Comments selectComment={selectComments} />
+      <VideoList
+        selectVideoList={selectVideoList}
+        onVideoSelect={selectedVideo.id}
+      />
+    </div>
   );
 }
 
-export default Homepage; 
+export default Homepage;
