@@ -9,8 +9,8 @@ function Comments({ selectComment }) {
     '0' + date.getDate()
   ).slice(-2)}/${date.getFullYear()}`;
 
-  const [countComment, setCountComment] = useState(0);
-
+const [countComment, setCountComment] = useState(0);
+		
   useEffect(() => {
     setCountComment(selectComment.length);
   }, [selectComment]);
@@ -45,8 +45,7 @@ function Comments({ selectComment }) {
           </div>
         </div>
       </form>
-
-      <ul className='comments__list'>
+ <ul className='comments__list'>
         {selectComment?.map((comment) => (
           <li key={comment.id} className='comments__item'>
             <div className='comments__itemcontainer'>
@@ -63,6 +62,7 @@ function Comments({ selectComment }) {
       </ul>
     </div>
   );
-}
+		}
+
 
 export default Comments;

@@ -7,7 +7,7 @@ import Comments from '../../components/Comments/Comments';
 import VideoList from '../../components/VideoList/VideoList';
 
 const Base_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
-const api_key = '4d84c38d-eed7-4f2e-84cb-cda8f2dbfd81';
+const api_key = 'aef692e0-e6ca-4453-ab35-e53daab81af2';
 
 function Homepage() {
   const [selectedVideo, setSelectedVideo] = useState({});
@@ -34,13 +34,11 @@ function Homepage() {
 
   useEffect(() => {
     const getVideosById = async (id) => {
-      console.log(id);
       try {
         const secResponse = await axios.get(
           `${Base_URL}/videos/${id}?api_key=${api_key}`
         );
         const videoData = secResponse.data;
-        console.log(videoData);
         setSelectedVideo(videoData);
         setSelectComment(videoData.comments);
       } catch (error) {
