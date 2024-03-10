@@ -6,8 +6,9 @@ import Video from '../../components/Video/Video';
 import Comments from '../../components/Comments/Comments';
 import VideoList from '../../components/VideoList/VideoList';
 
-const Base_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
-const api_key = 'aef692e0-e6ca-4453-ab35-e53daab81af2';
+// const Base_URL = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
+// const api_key = 'aef692e0-e6ca-4453-ab35-e53daab81af2';
+const Base_URL = 'http://localhost:8085';
 
 function Homepage() {
   const [selectedVideo, setSelectedVideo] = useState({});
@@ -20,9 +21,10 @@ function Homepage() {
   useEffect(() => {
     const getVedios = async () => {
       try {
-        const response = await axios.get(
-          `${Base_URL}/videos?api_key=${api_key}`
-        );
+        // const response = await axios.get(
+        //   `${Base_URL}/videos?api_key=${api_key}`
+        // );
+		const response = await axios.get(`${ Base_URL }/videos`);
         const videosData = response.data;
         setSelectVideoList(videosData);
       } catch (error) {
@@ -35,9 +37,11 @@ function Homepage() {
   useEffect(() => {
     const getVideosById = async (id) => {
       try {
-        const secResponse = await axios.get(
-          `${Base_URL}/videos/${id}?api_key=${api_key}`
-        );
+        // const secResponse = await axios.get(
+        //   `${Base_URL}/videos/${id}?api_key=${api_key}`
+        // );
+
+		const secResponse = await axios.get(`${ Base_URL }/videos/${id}`);
         const videoData = secResponse.data;
         setSelectedVideo(videoData);
         setSelectComment(videoData.comments);
@@ -50,6 +54,7 @@ function Homepage() {
     } else {
       getVideosById(defaultVideoId);
     }
+	
   }, [params]);
 
   return (

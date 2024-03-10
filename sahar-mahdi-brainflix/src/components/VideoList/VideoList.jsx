@@ -1,6 +1,8 @@
 import './VideoList.scss';
 import { Link } from 'react-router-dom';
 
+const imageUlr = "http://localhost:8085/images/";
+
 function VideoList({ selectVideoList, onVideoSelect }) {
   return (
     <div className='videolist'>
@@ -13,7 +15,7 @@ function VideoList({ selectVideoList, onVideoSelect }) {
             <Link to={`/videos/${videoWatch.id}`}>
               <img
                 className='videolist__image'
-                src={videoWatch.image}
+                src={`${imageUlr}/${videoWatch.image}`}
                 alt='imge'
               />
             </Link>

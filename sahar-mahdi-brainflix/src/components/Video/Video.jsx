@@ -2,6 +2,8 @@ import './Video.scss';
 import viewIcon from '../../assets/Icons/views.svg';
 import likeIcon from '../../assets/Icons/likes.svg';
 
+const imageUlr = "http://localhost:8085/images/";
+
 function Video({ selectVideo }) {
   const date = new Date();
   const formatedDate = `${('0' + (date.getMonth() + 1)).slice(-2)}/${(
@@ -13,7 +15,7 @@ function Video({ selectVideo }) {
       <div className='video__posters'>
         <video
           className='video__poster'
-          poster={selectVideo.image}
+          poster={`${imageUlr}/${selectVideo.image}`}
           controls
         ></video>
       </div>

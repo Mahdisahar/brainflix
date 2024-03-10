@@ -18,7 +18,7 @@ const [countComment, setCountComment] = useState(0);
   return (
     <div className='comments'>
       <h4 className='comments__title'>{`${countComment}  Comments`}</h4>
-
+	  {/* <h4 className='comments__title'>3 comments</h4> */}
       <form className='comments__form'>
         <h4 className='comments__title2'>JOIN THE CONVERSATION</h4>
 

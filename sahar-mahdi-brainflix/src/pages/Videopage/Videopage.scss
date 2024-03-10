@@ -55,16 +55,11 @@
       display: flex;
       margin: 0 8rem;
       width: 60rem;
-      border-bottom: 2px solid $mercury--color;
     }
   }
 
   &__detail {
     margin-top: 2rem;
-
-    @include tablet {
-      border-bottom: 2px solid $mercury--color;
-    }
 
     @include desktop {
       margin-top: 0;
@@ -122,10 +117,8 @@
     @include tablet {
       flex-direction: row-reverse;
       margin-top: 2rem;
-    }
-
-    @include desktop {
-      margin-right: 6rem;
+	  border-top: 2px solid $mercury--color;
+	  padding-top: 2rem;
     }
   }
 

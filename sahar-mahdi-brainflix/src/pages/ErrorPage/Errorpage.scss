@@ -1,0 +1,29 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.error {
+	text-align: center;
+	width: 50%;
+	margin: 6rem auto;
+
+	&__title {
+		color: $error-color;
+		line-height: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	&__link {
+		font-size: 1.5rem;
+		color:$grayblack--color ;
+		text-decoration: none;
+
+		&:hover {
+			cursor: pointer;
+			color: $primary--hover;
+			text-decoration: underline;
+		}
+
+	}
+
+
+}
