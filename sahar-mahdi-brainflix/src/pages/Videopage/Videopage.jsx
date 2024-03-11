@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import './Videopage.scss';
-// import { NavLink } from 'react-router-dom';
+import {NavLink, useNavigate  } from 'react-router-dom'
 import publishIcon from '../../assets/Icons/publish.svg';
 import axios from 'axios';
 
-const uploadVideoPriviewUrl =
-  'http://localhost:8085/images/Upload-video-preview.jpg';
+import image from '../../assets/Images/Upload-video-preview.jpg';
 const Base_URL = 'http://localhost:8085';
 
 function Videopage() {
+
   const [addnewVideo, setAddNewVideo] = useState({
     title: '',
     description: '',
   });
-
+  const navigate = useNavigate();
   const handleInput = (event) => {
     setAddNewVideo({ ...addnewVideo, [event.target.name]: event.target.value });
   };
@@ -22,18 +22,21 @@ function Videopage() {
     event.preventDefault();
 
     try {
-      const response = await axios.post(`${Base_URL}/videos`, addnewVideo);
+      const response = await axios.post(`${ Base_URL }/videos`, addnewVideo);
       const postData = response.data;
       console.log('response is', postData);
-      setAddNewVideo(postData);
+	  setAddNewVideo(postData);
+	  navigate('/');
+      setAddNewVideo({ title: '', description: '' });
+      event.target.reset();
     } catch (error) {
       console.log(error);
     }
   }
 
-  //   const handleCancelClick = () => {
-  //     <link to='/' />;
-  //   };
+  const handleCancelClick = () => {
+    <link to='/' />;
+  };
 
   return (
     <section className='upload'>
@@ -42,7 +45,7 @@ function Videopage() {
       <div className='upload__flex'>
         <img
           className='upload__image'
-          src={`${uploadVideoPriviewUrl}`}
+		src={image}
           alt='thumbnail'
         />
         <form className='upload__detail' onSubmit={handleForm}>
@@ -56,7 +59,6 @@ function Videopage() {
               name='title'
               id='title'
               value={addnewVideo.title}
-              //   onChange={(e) => handleForm(e)}
               onChange={handleInput}
               placeholder='Add a title to your video'
             />
@@ -73,48 +75,26 @@ function Videopage() {
               id='description'
               placeholder='Add a description to your video'
               value={addnewVideo.description}
-              //   onChange={(e) => handle(e)}
               onChange={handleInput}
             />
           </div>
-		  <div className='upload__button'>
-        <div className='upload__published'>
-          <img
-            className='upload__publishedicon'
-            src={publishIcon}
-            alt='publish icon'
-          />
-          <button
-            className='upload__publish'
-            // onClick={handlePublishClick}>
-            // onChange={addnewVideo}>
-          >
-            PUBLISH
-          </button>
-        </div>
-        <button className='upload__cancel'>CANCEL</button>
-      </div>
-          {/* <button>Published</button> */}
+          <div className='upload__button'>
+            <div className='upload__published'>
+              <img
+                className='upload__publishedicon'
+                src={publishIcon}
+                alt='publish icon'
+              />
+              <button className='upload__publish'>PUBLISH</button>
+            </div>
+            <NavLink to={'/'}>
+              <button className='upload__cancel' onClick={handleCancelClick}>
+                CANCEL
+              </button>
+            </NavLink>
+          </div>
         </form>
       </div>
-
-      {/* <div className='upload__button'>
-        <div className='upload__published'>
-          <img
-            className='upload__publishedicon'
-            src={publishIcon}
-            alt='publish icon'
-          />
-          <button
-            className='upload__publish'
-            // onClick={handlePublishClick}>
-            // onChange={addnewVideo}>
-          >
-            PUBLISH
-          </button>
-        </div>
-        <button className='upload__cancel'>CANCEL</button>
-      </div> */}
     </section>
   );
 }

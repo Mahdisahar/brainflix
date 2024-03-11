@@ -1,9 +1,10 @@
 import './VideoList.scss';
 import { Link } from 'react-router-dom';
 
-const imageUlr = "http://localhost:8085/images/";
+const imageUlr = "http://localhost:8085/images";
 
 function VideoList({ selectVideoList, onVideoSelect }) {
+
   return (
     <div className='videolist'>
       <h4 className='videolist__title'>NEXT VIDEOS</h4>
